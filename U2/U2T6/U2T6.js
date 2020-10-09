@@ -6,20 +6,20 @@ function Juego() {
   while (true) {
     var num = prompt("Introduce un numero del 1 al 100");
     intentos++;
-    if (num) {
-      if (num == aleatorio) {
+    if ( !isNaN(num) && num !== "" && num !== null ) {
+       if (num == aleatorio) {
         alert("Correcto \nhan sido " + intentos + " intentos");
         break;
       } else if (num > aleatorio) {
         alert("Es mayor");
       } else if (num < aleatorio) {
         alert("Es menor");
-      } else if (isNaN(num)) {
-        alert("No es un numero");
-      }
-    } else {
+      } 
+    }if ( isNaN(num) || num === "" ) {
+      alert("No es un numero");
+    } else if ( num === null ) {
       alert("Juego cancelado");
       break;
-    }
+    }  
   }
 }
