@@ -28,8 +28,13 @@ function Disco() {
         }
     }
     this.mostrar = function () {
-        alert('Nombre: ' + this.nombre + '\nGrupo: ' + this.grupo + '\nAño: ' + this.year +
-            '\nTipo: ' + this.tipo + '\nPrestado: ' + this.prestado);
+        let cad = 'Nombre: ' + this.nombre + '\nGrupo: ' + this.grupo + '\nAño: ' + this.year +
+            '\nTipo: ' + this.tipo + '\nPrestado: ' + this.prestado;
+        return cad;
+    }
+    this.getNombre = function () {
+        let nom = this.nombre;
+        return nom;
     }
 }
 
@@ -150,15 +155,19 @@ function Consultar() {
             if (typeof discos[posi] === "undefined") {
                 alert('No se ha encontrado');
             } else {
-                discos[posi].mostrar();
+                alert(discos[posi].mostrar());
             }
             break;
         case "2":
             let nom = prompt("Introduce el nombre del disco");
-            if (discos.indexOf(nom) >= 0) {
-                alert("La posición es: " + discos.indexOf(nom));
-            } else {
+            let resul = null;
+            for (let i in discos) {
+                if (discos[i].getNombre === nom) resul = i;
+            }
+            if (resul === null) {
                 alert('No se ha encontrado');
+            } else {
+                alert('La posición es: ' + resul);
             }
             break;
         default:
@@ -168,7 +177,7 @@ function Consultar() {
 }
 
 function datosDiscos(dis) {
-    for (let i = 0; i < dis.length; i++) {
-        alert(dis[i].mostrar());
+    for (let i of dis) {
+        alert(i.mostrar());
     }
 }
