@@ -20,7 +20,9 @@ function Disco() {
         }
     }
     this.estanteria = function (loc) {
-        this.localizacion = loc;
+        if (!isNaN(loc)) {
+            this.localizacion = loc * 1;
+        }
     }
     this.estado = function (pres) {
         if (pres === true || pres === false) {
@@ -29,12 +31,8 @@ function Disco() {
     }
     this.mostrar = function () {
         let cad = 'Nombre: ' + this.nombre + '\nGrupo: ' + this.grupo + '\nAño: ' + this.year +
-            '\nTipo: ' + this.tipo + '\nPrestado: ' + this.prestado;
+            '\nTipo: ' + this.tipo + '\nLocalizacion: ' + this.localizacion + '\nPrestado: ' + this.prestado;
         return cad;
-    }
-    this.getNombre = function () {
-        let nom = this.nombre;
-        return nom;
     }
 }
 
@@ -62,7 +60,10 @@ dis6.estado(true);
 let dis7 = new Disco();
 dis7.propiedades('Dead Letters', 'The Rasmus', 2003, 6, 'pop');
 
-var discos = [dis1, dis2, dis3, dis4, dis5, dis6, dis7];
+let dis8 = new Disco();
+dis8.propiedades('Vol. 3: (The Subliminal Verses)', 'Slipknot', 2004, 8, 'rock');
+
+var discos = [dis1, dis2, dis3, dis4, dis5, dis6, dis7, dis8];
 
 let menu = prompt("Ociones:\n1 Mostrar número de discos\n2 Mostrar listado de discos\n3 Mostrar un intervalo de discos" +
     "\n4 Añadir un disco\n5 Borrar un disco\n6 Consultar un disco");
@@ -101,7 +102,11 @@ function mostrarDiscos() {
         if (orden == 2) {
             discos.reverse();
         } else if (orden == 3) {
-            discos.sort();
+            discos.sort(function (a, b) {
+                let textA = a.nombre;
+                let textB = b.nombre;
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            });
         }
         datosDiscos(discos);
     } else {
@@ -120,12 +125,17 @@ function intervalo() {
 function addDisco() {
     let orden = prompt("1 añadir al principio\n2 añadir al final");
     if (orden == 1 || orden == 2) {
-        let dis8 = new Disco();
-        dis7.propiedades('Vol. 3: (The Subliminal Verses)', 'Slipknot', 2004, 8, 'rock');
+        let dis9 = new Disco();
+        let nom = prompt("Nombre del disco");
+        let grupo = prompt("Grupo de música o cantante");
+        let year = prompt("Año de publicación");
+        let loc = prompt("Localización (estanteria)");
+        let tip = prompt("Tipo de música (rock, pop, punk o indie)");
+        dis9.propiedades(nom, grupo, year, loc, tip);
         if (orden == 1) {
-            discos.unshift(dis8);
+            discos.unshift(dis9);
         } else {
-            discos.push(dis8);
+            discos.push(dis9);
         }
         datosDiscos(discos);
     } else {
@@ -162,7 +172,7 @@ function Consultar() {
             let nom = prompt("Introduce el nombre del disco");
             let resul = null;
             for (let i in discos) {
-                if (discos[i].getNombre === nom) resul = i;
+                if (discos[i].nombre === nom) resul = i;
             }
             if (resul === null) {
                 alert('No se ha encontrado');
