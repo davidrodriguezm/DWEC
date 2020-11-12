@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="formulario_1.js"></script>
+    <title>U4T1</title>
+</head>
+<body>
+    <form name="formu" onsubmit="return mostrarDisco()" >
+        Nombre del disco:<input type="text" name="nombre" /><br>
+        Grupo de música o cantante:<input type="text" name="grupo" /><br>
+        Año de publicación:<input type="date" name="year" /><br>
+        Tipo de música:<select name="tipo">
+            <option value="rock">rock</option>
+            <option value="pop">pop</option>
+            <option value="punk">punk</option>
+            <option value="indie">indie</option>
+          </select>
+        <br>
+        Localización:<input type="number" name="loc" min="1" max="10"/><br>
+        Prestado:<input name="pres" type="checkbox" /><br />
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Borrar" />
+    </form>
+    
+</body>
+</html>
