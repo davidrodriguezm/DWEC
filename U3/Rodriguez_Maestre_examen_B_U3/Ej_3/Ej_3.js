@@ -1,0 +1,12 @@
+let cad = prompt("Introduce una cadena del tipo:\nmunicipio:cod_parcela@nombre|apellido1|apellido2");
+let separa_puntos = cad.split(":");
+document.getElementById("municipio").innerHTML = "Municipio: " + separa_puntos[0];
+let separa_ralla = separa_puntos[1].split("|");
+let apellidos = separa_ralla[1] + " " + separa_ralla[2];
+document.getElementById("apellidos").innerHTML = "Apellidos: " + apellidos;
+let separa_arroba = separa_ralla[0].split("@");
+document.getElementById("nombre").innerHTML = "Nombre: " + separa_arroba[1];
+let parcela = separa_arroba[0];
+let numeros = parcela.substring(0,4);
+let letras = parcela.substring(4);
+document.getElementById("parcela").innerHTML = "Parcela: " + numeros + " " + letras;
