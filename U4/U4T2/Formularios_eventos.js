@@ -36,10 +36,8 @@ function comprobar(input_nuevo) {
         if (input_nuevo.name == input_anterior.name) {
             input_nuevo.style = "background-color:green;";
             input_anterior.style = "background-color:green;";
-            
-            // No puedo acceder a estos elementos
-            document.getElementById( "tex" + input_nuevo.id.substring( input_nuevo.id.length -1 ) ).value = "1";
-            document.getElementById( "tex" + input_anterior.id.substring( input_anterior.id.length -1 ) ).value = "1"; 
+            document.getElementById( "tx" + input_nuevo.id.substring( input_nuevo.id.length -1 ) ).value = "1";
+            document.getElementById( "tx" + input_anterior.id.substring( input_anterior.id.length -1 ) ).value = "1"; 
         }
     }
     input_anterior = input_nuevo;

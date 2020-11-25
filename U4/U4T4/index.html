@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="validacion_estados.js" defer></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>U4T4</title>
+</head>
+<body>
+    <form name="formulario" id="formu" >
+        <label for="nom" id="para_nom">Nombre del disco:</label>
+        <input type="text" name="nombre" id="nom" class="" />
+        <br>
+        <label for="nom" id="para_grup">Grupo de música o cantante:</label>
+        <input type="text" name="grupo" id="grup" class="" />
+        <br>
+        <label for="nom" id="para_ano">Año de publicación:</label>
+        <input type="text" name="year" id="ano" class="" />
+        <br>
+        <label for="nom" id="para_tip">Tipo de música:</label>
+        <select name="tipo" id="tip">
+            <option value="rock">rock</option>
+            <option value="pop">pop</option>
+            <option value="punk">punk</option>
+            <option value="indie">indie</option>
+          </select>
+        <br>
+        <label for="nom" id="para_loc">Localización:</label>
+        <input type="text" name="localizacion" id="loc" class="" />
+        <br>
+        <label for="nom" id="para_pres">Prestado:</label>
+        <input type="checkbox" name="prestado"  id="pres" />
+        <br/>
+        <input type="submit" id="enviar" value="Enviar" />
+        <input type="reset" value="Borrar" />
+    </form>
+    
+</body>
+</html>
