@@ -1,0 +1,14 @@
+td {
+    width: 180px;
+    height: 200px;
+}
+
+input[type=image] {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+}
+
+input[type=text] {
+    width: 145px;
+}
