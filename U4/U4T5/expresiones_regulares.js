@@ -16,7 +16,7 @@ function cam_fecha( cad ) {
 
 function cam_cocinero( cad ) {
     let resul = false;
-    if( /^[A-Z]{2}\$\d{4}$/.test(cad) ) {
+    if( /^[A-Z]{2}\W\d{4}$/.test(cad) ) {
         resul = true;
     } else {
         alert("Cocinero: nombre en clave formado por dos letras en mayúscula, un  símbolo y cuatro dígitos (ej. WW$1234)");
@@ -56,7 +56,7 @@ function cam_composicion( cad ) {
 
 function com_numero( cad ) {
     let resul = false;
-    let abc = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z];
+    let abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     if( /^[A-Z a-z]{2}\d{2}-\d{12}-\d{2}$/.test(cad) ) {
         cad = cad.toLocaleUpperCase();
         let suma_primeros_d = abc.indexOf( cad.charAt(0) ) * 1;
@@ -73,6 +73,7 @@ function com_numero( cad ) {
         }
         ultimos_d /= 6;
         if ( suma_primeros_d == primeros_d && ultimos_d == ultimos_numeros) {
+            document.getElementById("texto").innerHTML = primeras_letras_numeros + intermedio_numeros + ultimos_numeros;
             resul = true;
         } else {
             alert("Los valores de los numeros no son correctos");
