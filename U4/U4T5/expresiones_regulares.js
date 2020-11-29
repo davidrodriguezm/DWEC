@@ -58,21 +58,29 @@ function com_numero( cad ) {
     let resul = false;
     let abc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     if( /^[A-Z a-z]{2}\d{2}-\d{12}-\d{2}$/.test(cad) ) {
-        cad = cad.toLocaleUpperCase();
-        let suma_primeros_d = abc.indexOf( cad.charAt(0) ) * 1;
-        suma_primeros_d += abc.indexOf( cad.charAt(1) ) * 1;
-        let primeros_d = abc.indexOf( cad.charAt(2) );
-        primeros_d += abc.indexOf( cad.charAt(3) );
         let dividido = cad.split("-");
         let primeras_letras_numeros = dividido[0];
         let intermedio_numeros = dividido[1];
         let ultimos_numeros = dividido[2];
-        let ultimos_d = 0;
-        for (let i = 0; i < 5; i++) {
-            const ultimos_d =+ intermedio_numeros[i] * 1;
+
+        let suma_primeros_d = abc.indexOf( cad.charAt(0).toLocaleUpperCase() ) + 1;
+        suma_primeros_d +=  abc.indexOf( cad.charAt(1).toLocaleUpperCase() ) + 1; 
+        let primeros_d = cad.charAt(2) * 10;
+        primeros_d +=  parseInt( cad.charAt(3) );
+
+        let primero_ultimos_d = 0;
+        for (let i = 0; i < 6; i++) {
+            primero_ultimos_d += intermedio_numeros[i] * 1;
         }
-        ultimos_d /= 6;
-        if ( suma_primeros_d == primeros_d && ultimos_d == ultimos_numeros) {
+        primero_ultimos_d = Math.trunc( primero_ultimos_d / 6 );
+
+        let ultimo_ultimos_d = 0;
+        for (let i = 6; i < 12; i++) {
+            ultimo_ultimos_d += intermedio_numeros[i] * 1;
+        }
+        ultimo_ultimos_d = Math.trunc( ultimo_ultimos_d / 6 );
+        
+        if ( suma_primeros_d == primeros_d && primero_ultimos_d == ultimos_numeros[0] && ultimo_ultimos_d == ultimos_numeros[1] ) {
             document.getElementById("texto").innerHTML = primeras_letras_numeros + intermedio_numeros + ultimos_numeros;
             resul = true;
         } else {
@@ -92,6 +100,7 @@ function validar( e ) {
         && com_destinatario( document.getElementById("destinatario").value ) && com_gramos( document.getElementById("gramos").value) 
         && cam_composicion( document.getElementById("composicion").value) && com_numero( document.getElementById("numero").value) ) {
         resul = true;
+        alert("Datos correctos");
     } else {
         e.preventDefault();
     }
