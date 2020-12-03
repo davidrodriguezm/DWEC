@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="cookies.js" defer></script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>U4T6</title>
+</head>
+<body>
+    <form name="formulario" id="formu" >
+        <label for="fe" id="para_fecha">Fecha de creación:</label>
+        <input type="text" name="fecha" id="fecha" class="" />
+        <br>
+        <label for="co" id="para_cocinero">Cocinero:</label>
+        <input type="text" name="cocinero" id="cocinero" class="" />
+        <br>
+        <label for="des" id="para_destinatario">Destinatario:</label>
+        <input type="text" name="destinatario" id="destinatario" class="" />
+        <br>
+        <label for="gra" id="para_gramos">Gramos:</label>
+        <input name="text" id="gramos" />
+        <br>
+        <label for="compo" id="para_composicion">Composición:</label>
+        <input type="text" name="composicion" id="composicion" class="" />
+        <br>
+        <label for="num" id="para_numero">Número de cuenta de EEUU:</label>
+        <input type="text" name="numero"  id="numero" /> <span id="texto"></span>
+        <br/>
+        <input type="submit" id="enviar" value="Enviar" />
+        <input type="reset" value="Borrar" />
+    </form>
+    <p>Número de errores: <span id="n_errores" ></span></p>
+    <input type="submit" id="reiniciar" value="reiniciar valor cookie 0" />
+</body>
+</html>
