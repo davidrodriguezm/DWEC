@@ -1,8 +1,9 @@
 window.onload = iniciar;
 
 function iniciar() {
-    document.getElementById("enviar").addEventListener('click', validar, false);
-    document.getElementById("reiniciar").addEventListener('click', crear_modificar_cookie, false);
+    document.getElementById("enviar").addEventListener('click', validar);
+    document.getElementById("reiniciar").addEventListener('click', reiniciar_cookie);
+    document.getElementById("borrar").addEventListener('click', borrar);
     document.getElementById("n_errores").innerHTML = get_valor_cookie();
 }
 
@@ -104,9 +105,9 @@ function validar( e ) {
         resul = true;
         alert("Datos correctos");
     } else {
-        let errores = get_valor_cookie( nombre = "contador" ) * 1;
-        console.log(get_valor_cookie( nombre = "contador" )* 1);
+        let errores = get_valor_cookie() * 1;
         crear_modificar_cookie( errores + 1 );
+        document.getElementById("n_errores").innerHTML = get_valor_cookie();
         e.preventDefault();
     }
     return resul;
@@ -119,11 +120,9 @@ function crear_modificar_cookie( valor = 0, nombre = "contador" ) {
     document.cookie = nombre + "=" + valor + ";" + expiracion + ";path=/";
 }
 
-function borrar_cookie( nombre = "contador" ) {
-    let fecha = new Date();
-    fecha.setTime(0);
-    expiracion = "expires=" + fecha.toUTCString();
-    document.cookie = nombre + "=" + "" + ";" + expiracion + ";path=/";
+function reiniciar_cookie() {
+    crear_modificar_cookie();
+    document.getElementById("n_errores").innerHTML = get_valor_cookie();
 }
 
 function get_valor_cookie( nombre = "contador" ) {
@@ -139,4 +138,16 @@ function get_valor_cookie( nombre = "contador" ) {
       }
     }
     return "0";
+}
+
+function borrar() {
+    borrar_cookie();
+    document.getElementById("n_errores").innerHTML = get_valor_cookie();
+}
+
+function borrar_cookie( nombre = "contador" ) {
+    let fecha = new Date();
+    fecha.setTime(0);
+    expiracion = "expires=" + fecha.toUTCString();
+    document.cookie = nombre + "=" + ";" + expiracion + ";path=/";
 }
