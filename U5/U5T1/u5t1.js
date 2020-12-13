@@ -10,7 +10,7 @@ function iniciar() {
     let a_primero = a_todos[0];
     let a_penultimo = a_todos[a_todos.length -2];
     info.innerHTML = 'Número de párrafos de la página:  ' + p_todos.length;
-    info.innerHTML += '</br>' + 'Texto del segundo párrafo: ' + p_todos[1].nodeValue ;
+    info.innerHTML += '</br>' + 'Texto del segundo párrafo: ' + p_todos[1].textContent ;
     info.innerHTML += '</br>' + 'Número de enlaces de la página: ' + a_todos.length;
     info.innerHTML += '</br>' + 'Dirección del primer enlace: ' + a_primero.href;
     info.innerHTML += '</br>' + 'Dirección del penúltimo enlace: ' + a_penultimo.href;
