@@ -13,7 +13,7 @@ function add_li() {
 }
 
 function del_pri() {
-    let hijo = lista.firstElementChild;
+    let hijo = lista.firstChild;
     console.log(hijo);
     lista.removeChild(hijo); 
 }
