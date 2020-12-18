@@ -14,11 +14,10 @@ function add_li() {
 
 function del_pri() {
     let hijo = lista.firstElementChild;
-    console.log(hijo);
-    lista.removeChild(hijo); 
+    if (hijo != null) lista.removeChild(hijo);
 }
 
 function add_ult() {
-    let hijo = lista.lastChild;
-    if (hijo != null) lista.removeChild(hijo)
+    let hijo = lista.lastElementChild;
+    if (hijo != null) lista.removeChild(hijo);
 }
