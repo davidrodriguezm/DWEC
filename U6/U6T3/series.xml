@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Series>
+    <Serie>
+        <Titulo>Vikings</Titulo>
+        <Cadena>History Channel</Cadena>
+        <Director>Michael Hirst</Director>
+        <Ano>2013</Ano>
+        <Terminada>no</Terminada>
+    </Serie>
+    <Serie>
+        <Titulo>Game of Thrones</Titulo>
+        <Cadena>HBO</Cadena>
+        <Director>David Benioff</Director>
+        <Ano>2011</Ano>
+        <Terminada>sí</Terminada>
+    </Serie>
+    <Serie>
+        <Titulo>Fullmetal Alchemist</Titulo>
+        <Cadena>Bones</Cadena>
+        <Director>Yasuhiro Irie</Director>
+        <Ano>2009</Ano>
+        <Terminada>sí</Terminada>
+    </Serie>
+    <Serie>
+        <Titulo>Escaflowne</Titulo>
+        <Cadena>TV Tokyo</Cadena>
+        <Director>Kazuki Akane</Director>
+        <Ano>1996</Ano>
+        <Terminada>sí</Terminada>
+    </Serie>
+</Series>
