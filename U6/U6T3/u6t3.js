@@ -46,5 +46,4 @@ function color( fecha ) {
     }
     return cad;
 }
-
 cargar_series();
