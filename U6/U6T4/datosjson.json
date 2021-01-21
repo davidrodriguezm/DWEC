@@ -1,0 +1,30 @@
+{"Series":[
+    {
+    "Titulo":"Vikings",
+    "Cadena":"History Channel",
+    "Director":"Michael Hirst",
+    "Ano":"2013",
+    "Terminada":"no"
+    },
+    {
+    "Titulo":"Game of Thrones",
+    "Cadena":"HBO",
+    "Director":"David Benioff",
+    "Ano":"2011",
+    "Terminada":"sí"
+    },
+    {
+    "Titulo":"Fullmetal Alchemist",
+    "Cadena":"Bones",
+    "Director":"Yasuhiro Irie",
+    "Ano":"2009",
+    "Terminada":"sí"
+    },
+    {
+    "Titulo":"Escaflowne",
+    "Cadena":"TV Tokyo",
+    "Director":"Kazuki Akane",
+    "Ano":"1996",
+    "Terminada":"sí"
+    }
+]}
