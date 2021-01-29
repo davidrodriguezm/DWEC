@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+    </style>
+    <script defer src="entregable.js"></script>
+    <title>U5 - Entregable</title>
+</head>
+
+<body>
+    <label for="columnas">columnas:</label>
+    <input class="" id="columnas" type="text">
+    <br>
+    <label for="filas">filas:</label>
+    <input class="" id="filas" type="text">
+    <br>
+    <label for="header">header:</label>
+    <input type="checkbox" id="header" class="" />
+    <br>
+    <div id="inputs"></div>
+    <label for="relleno">relleno de tabla:</label>
+    <input class="" id="relleno" type="text" value="contenido">
+    <br>
+    <label for="grosor">grosor del borde:</label>
+    <input class="" id="grosor" type="number" value="1">
+    <br>
+    <label for="color">color del borde:</label>
+    <select id="color">
+        <option value="black">negro</option>
+        <option value="blue">azul</option>
+        <option value="red">rojo</option>
+        <option value="green">verde</option>
+    </select>
+    <br>
+    <button class="" id="generar">generar</button>
+    <hr>
+    <div id="tabla">
+
+    </div>
+</body>
+
+</html>
