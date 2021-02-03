@@ -3,12 +3,12 @@ let json_datos = null;
 function cargar_json(armas, bando = null) {
     let tabla = '<tr><th>nombre</th><th>imagen</th><th>descripcion</th><th>bando</th></tr>';
     for ( let arma of armas ) {
-        let tr = '<tr><th>';
+        tr = '<tr><th>';
         tr += arma.nombre;
         tr += '</th><td>';
         tr += '<img src="' + arma.imagen + '" />';
         tr += '</td><td>';
-        tr += arma.descripcion;
+        tr+= arma.descripcion;
         tr += '</td><td>';
         if ( arma.bando == 1 ) {
             tr += 'Aliados';
@@ -50,4 +50,5 @@ function filtrar_bando() {
 
 document.getElementById("fetch").addEventListener('click', cargar_fetch);
 document.getElementById("xmlhttp").addEventListener('click', cargar_xmlhttp);
-document.getElementById("bando").addEventListener('click', filtrar_bando);
+document.getElementById("aliados").addEventListener('click', filtrar_bando);
+document.getElementById("eje").addEventListener('click', filtrar_bando);
