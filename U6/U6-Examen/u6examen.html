@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="examen.js"></script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+
+    </style>
+    <title>Examen</title>
+</head>
+<body>
+    <label for="comunidades">CCAA:</label>
+    <select id="comunidades">
+    </select>
+    <label for="D_entregadas">D.entregadas:</label>
+    <input class="" id="D_entregadas" type="number">
+    <label for="D_admin">D.admin:</label>
+    <input class="" id="D_admin" type="number">
+    <label for="D_completa">D.completa:</label>
+    <input class="" id="D_completa" type="number">
+    <label for="P_entregadas">P.entregadas:</label>
+    <input class="" id="P_entregadas" type="number">
+    <label for="P_completa">P.completa:</label>
+    <input class="" id="P_completa" type="number">
+    <label for="P_admin">P.admin:</label>
+    <input class="" id="P_admin" type="number">
+    <input class="" id="modi" type="button" value="Modificar datos">
+    <hr>
+    <hr2>Resultados</hr2>
+    <div id="resul"></div>
+    <hr>
+    <h2>tabla de vacunacion</h2>
+    <input class="" id="c_xml" type="button" value="Cargar datos vacunación (XMLHttpRequest)">
+    <input class="" id="c_fetch" type="button" value="Cargar datos vacunación (Fetch)">
+    <table id="respuesta" class=""></table> 
+    
+</body>
+</html>
