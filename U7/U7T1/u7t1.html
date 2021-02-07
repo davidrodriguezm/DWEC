@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="u7t1.js"></script>
+    <title>Diferencias de almacenamiento</title>
+</head>
+
+<body>
+    <label for="almacena">Area de almacenanamiento:</label>
+    <select id="almacena">
+        <option value="session" id="session">Session</option>
+        <option value="local" id="local">Local</option>
+    </select>
+    <br>
+    <label for="clave">Clave:</label>
+    <input type="text" id="clave" />
+    <br>
+    <label for="valor">Valor:</label>
+    <input type="text" id="valor" />
+    <br>
+    <input type="button" id="guardar" value="Guardar" />
+    <input type="button" id="eliminar" value="Eliminar" />
+    <input type="button" id="refrescar" value="Refrescar" />
+    <input type="button" id="compatibilidad" value="Comprobar compatibilidad del navegador" />
+    <br><br>
+    <div style="display: flex;">
+        <section style="margin: 30px;">
+            <h3>Claves y valores en local Storage:</h3>
+            <textarea id="area_local" cols="40" rows="15"></textarea>
+        </section>
+        <section style="margin: 30px;">
+            <h3>Claves y valores en session Storage:</h3>
+            <textarea id="area_session" cols="40" rows="15"></textarea>
+        </section>
+    </div>
+
+
+
+</body>
+
+</html>
