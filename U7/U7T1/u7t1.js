@@ -3,7 +3,7 @@ function area_session() {
     for (let i = 0; i < sessionStorage.length; i++) { 
         let clave = sessionStorage.key(i);
         let valor = sessionStorage.getItem(clave);
-        if ( clave != 'IsThisFirstTime_Log_From_LiveServer') contenido += clave + ' - ' + valor + '\n';
+        contenido += clave + ' - ' + valor + '\n';
     }
     document.getElementById('area_session').innerHTML = contenido;
 }
@@ -13,7 +13,7 @@ function area_local() {
     for (let i = 0; i < localStorage.length; i++) { 
         let clave = localStorage.key(i);
         let valor = localStorage.getItem(clave);
-        if ( clave != 'IsThisFirstTime_Log_From_LiveServer') contenido += clave + ' - ' + valor + '\n';
+        contenido += clave + ' - ' + valor + '\n';
     }
     document.getElementById('area_local').innerHTML = contenido;
 }
@@ -32,8 +32,7 @@ function guardar() {
         }
     } else {
         alert('Introduce una clave y un valor');
-    }
-    
+    }   
 }
 
 function refrescar() {
@@ -42,13 +41,26 @@ function refrescar() {
 }
 
 function eliminar() {
-    if ( localStorage.length > 0  && sessionStorage.length > 0  ) {
-        sessionStorage.clear();
-        localStorage.clear();
+    let tipo_al = document.getElementById('almacena').value;
+    let clave = document.getElementById('clave').value;
+    if ( clave != "" > 0 ) {
+        if ( tipo_al == "local" ) {
+            if ( localStorage.length > 0 ) {
+                localStorage.removeItem(clave);
+            } else {
+                alert('No hay datos almacenados');
+            }      
+        } else if( tipo_al == "session" ) {
+            if ( sessionStorage.length > 0 ) {
+                sessionStorage.removeItem(clave);
+            } else {
+                alert('No hay datos almacenados');
+            }
+        }
         refrescar();
     } else {
-        alert('No hay datos almacenados. Introduce una clave y un valor');
-    }
+        alert('Introduce una clave');
+    }   
 }
 
 function compatibilidad() {
