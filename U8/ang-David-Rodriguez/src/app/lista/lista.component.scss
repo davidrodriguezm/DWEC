@@ -1,0 +1,17 @@
+.lista {
+  color: rgb(17, 105, 206);
+  font-family: 'Lucida Sans';
+  list-style: none;
+  padding: 0px;
+  li:hover {
+    color: #c9b440;
+    text-shadow: 0 0 10px #dfc849;
+  }
+}
+h2.lista{
+  margin-bottom: 0px;
+}
+ul.lista {
+  margin-top: 5px;
+  margin-left: 15px;
+}
