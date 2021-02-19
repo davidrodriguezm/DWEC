@@ -1,2 +1,5 @@
-<h2>Resultados</h2>
-<div id="resul"></div>
+<h2>Resultados:</h2>
+<h3 id="resul" *ngIf="peticion; else error">Se ha realizado la petición</h3>
+<ng-template #error >
+  <h3>No se ha realizado la petición</h3>
+</ng-template>

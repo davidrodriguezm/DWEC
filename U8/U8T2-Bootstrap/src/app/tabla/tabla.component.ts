@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { comunidad } from 'src/app/interfaces/comunidad';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { DatosVacunacionService } from '../services/datos-vacunacion.service';
+import { ResultadosComponent } from '../resultados/resultados.component';
 
 @Component({
   selector: 'app-tabla',
@@ -15,6 +16,9 @@ export class TablaComponent implements OnInit {
   @Input()
   formulario : FormularioComponent;
 
+  @Input()
+  resultados : ResultadosComponent;
+
   constructor(public vacunacion: DatosVacunacionService) {
 
   }
@@ -26,9 +30,8 @@ export class TablaComponent implements OnInit {
     let ccaa_filtradas = [];
     let ccaa_nombres = [];
     this.vacunacion.get_vaccination().subscribe((response) => {
-      console.log(response);
+      this.resultados.peticion = response ?  true : false;
       for (const ccaa of response) {
-        console.log(ccaa);
         if (ccaa.ccaa !== 'Totales') {
           ccaa_filtradas.push(ccaa);
           ccaa_nombres.push(ccaa.ccaa);

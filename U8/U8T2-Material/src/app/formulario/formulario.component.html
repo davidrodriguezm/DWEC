@@ -1,17 +1,44 @@
-<label for="comunidades">CCAA:</label>
-<select name="comunidades" id="comunidades">
-  <option *ngFor="let comu of l_comunidades" value="${comu}">comu</option>
-</select>
-<label for="D_entregadas">D.entregadas:</label>
-<input class="" id="D_entregadas" type="number">
-<label for="D_admin">D.admin:</label>
-<input class="" id="D_admin" type="number">
-<label for="D_completa">D.completa:</label>
-<input class="" id="D_completa" type="number">
-<label for="P_entregadas">P.entregadas:</label>
-<input class="" id="P_entregadas" type="number">
-<label for="P_completa">P.completa:</label>
-<input class="" id="P_completa" type="number">
-<label for="P_admin">P.admin:</label>
-<input class="" id="P_admin" type="number">
-<input class="" id="modi" type="button" value="Modificar datos" (click)="guardar_datos()">
+<mat-form-field appearance="fill">
+  <mat-label for="comunidades">CCAA:</mat-label>
+  <mat-select id="comunidades">
+    <mat-option *ngFor="let comu of comunidades" value="{{ comu }}" >{{ comu }}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="D_entregadas">D.entregadas:</mat-label>
+  <input matInput type="number" id="D_entregadas">
+  <span matSuffix>Unidades</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="D_admin">D.administradas:</mat-label>
+  <input matInput type="number" id="D_admin">
+  <span matSuffix>Unidades</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="D_completa">D.completa:</mat-label>
+  <input matInput type="number" id="D_completa">
+  <span matSuffix>Unidades</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="P_entregadas">P.entregadas:</mat-label>
+  <input matInput type="number" id="P_entregadas" min="0" max="100">
+  <span matSuffix>%</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="P_completas">P.completa:</mat-label>
+  <input matInput type="number" id="P_completa" min="0" max="100">
+  <span matSuffix>%</span>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label for="P_admin">P.administradas:</mat-label>
+  <input matInput type="number" id="P_admin" min="0" max="100">
+  <span matSuffix>%</span>
+</mat-form-field>
+
+<button mat-raised-button color="primary" (click)="guardar_datos()">Cargar datos</button>
