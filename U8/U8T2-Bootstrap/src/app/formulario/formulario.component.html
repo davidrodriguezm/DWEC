@@ -1,0 +1,17 @@
+<label for="comunidades">CCAA:</label>
+<select name="comunidades" id="comunidades">
+  <option *ngFor="let comu of comunidades" value="{{comu.ccaa}}" >{{ comu.ccaa }}</option>
+</select>
+<label for="D_entregadas">D.entregadas:</label>
+<input class="" id="D_entregadas" type="number">
+<label for="D_admin">D.admin:</label>
+<input class="" id="D_admin" type="number">
+<label for="D_completa">D.completa:</label>
+<input class="" id="D_completa" type="number">
+<label for="P_entregadas">P.entregadas:</label>
+<input class="" id="P_entregadas" type="number">
+<label for="P_completa">P.completa:</label>
+<input class="" id="P_completa" type="number">
+<label for="P_admin">P.admin:</label>
+<input class="" id="P_admin" type="number">
+<input class="btn-primary" id="modi" type="button" value="cargar datos" (click)="guardar_datos()">

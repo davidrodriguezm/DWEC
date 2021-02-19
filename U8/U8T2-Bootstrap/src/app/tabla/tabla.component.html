@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">CCAA</th>
+    <th scope="col">D.entregadas</th>
+    <th scope="col">D.admin</th>
+    <th scope="col">D.completa</th>
+    <th scope="col">P.entregadas</th>
+    <th scope="col">P.completa</th>
+    <th scope="col">P.admin</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let comu of comunidades" >
+    <td> {{ comu.ccaa | string }}</td>
+    <td> {{ comu.dosisEntregadas | number }} </td>
+    <td> {{ comu.dosisAdministradas | number }} </td>
+    <td> {{ comu.dosisPautaCompletada  | number }} </td>
+    <td> {{ comu.porcentajeEntregadas | number }} </td>
+    <td> {{ comu.porcentajePoblacionCompletas  | number }} </td>
+    <td> {{ comu.porcentajePoblacionAdministradas  | number }} </td>
+  </tr>
+  </tbody>
+</table>
