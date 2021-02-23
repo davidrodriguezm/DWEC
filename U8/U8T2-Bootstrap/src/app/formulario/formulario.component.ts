@@ -9,10 +9,10 @@ import { TablaComponent } from 'src/app/tabla/tabla.component';
   styleUrls: ['./formulario.component.scss']
 })
 export class FormularioComponent implements OnInit {
-  comunidades : comunidad[];
+  comunidades: comunidad[];
 
   @Input()
-  tabla : TablaComponent;
+  tabla: TablaComponent;
 
   constructor(public vacunacion: DatosVacunacionService) { }
 
