@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FiltrosComponent } from './components/filtros/filtros.component';
 import { TablaComponent } from './components/tabla/tabla.component';
-
+import { PeticionService } from 'src/app/services/peticion.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { TablaComponent } from './components/tabla/tabla.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PeticionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

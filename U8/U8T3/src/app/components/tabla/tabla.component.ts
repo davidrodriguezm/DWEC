@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FiltrosComponent } from '../filtros/filtros.component';
 
 @Component({
   selector: 'app-tabla',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tabla.component.scss']
 })
 export class TablaComponent implements OnInit {
+  @Input()
+  filtros : FiltrosComponent;
 
   constructor() { }
 

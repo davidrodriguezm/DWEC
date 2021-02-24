@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Filtro } from 'src/app/intefaces/filtro';
+import { Component, Input, OnInit } from '@angular/core';
+import { Formulario } from 'src/app/intefaces/Formulario';
+import { PeticionService } from 'src/app/services/peticion.service';
+import { TablaComponent } from '../tabla/tabla.component';
 
 @Component({
   selector: 'app-filtros',
@@ -7,11 +9,19 @@ import { Filtro } from 'src/app/intefaces/filtro';
   styleUrls: ['./filtros.component.scss']
 })
 export class FiltrosComponent implements OnInit {
-  filtros: Filtro;
+  formulario: Formulario;
 
-  constructor() { }
+  @Input()
+  tabla : TablaComponent;
+
+  constructor( public peti: PeticionService ) { }
 
   ngOnInit(): void {
+    this.peti.cargar_datos();
+  }
+
+  buscar_datos(): void {
+
   }
 
 }

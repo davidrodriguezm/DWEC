@@ -1,5 +1,5 @@
-export interface Filtro {
-  Familia: string,
+export interface Formulario {
+  familia: string,
   nombre: string,
   provincia: string,
   tipo: string,
