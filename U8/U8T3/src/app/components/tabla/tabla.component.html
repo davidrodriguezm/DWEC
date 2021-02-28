@@ -1,1 +1,29 @@
-<p>tabla works!</p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Centro</th>
+      <th scope="col">Provincia</th>
+      <th scope="col">Nombre del ciclo</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Turno</th>
+      <th scope="col">Bilingüe</th>
+      <th scope="col">Dual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fi of filas">
+      <td>
+        <b>{{ fi.centro.codigo }} - {{ fi.centro.nombre }}</b><br>
+        {{ fi.centro.direccion}}<br>
+        Teléfono: {{ fi.centro.telefono}}<br>
+        Localidad: {{ fi.centro.localidad}}
+      </td>
+      <td> {{ fi.provincia }} </td>
+      <td> {{ fi.nombre_ciclo }} </td>
+      <td> {{ fi.tipo }} </td>
+      <td> {{ fi.turno }} </td>
+      <td> {{ fi.bilingue }} </td>
+      <td> {{ fi.dual }} </td>
+    </tr>
+  </tbody>
+</table>

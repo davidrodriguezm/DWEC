@@ -1,86 +1,71 @@
-<div class="form-group">
-  <label for="familia">Familia:</label>
-  <select class="form-control" id="familia" [(ngModel)]="formulario.familia" name="familia" #familia="ngModel">
-    <option value="Almeria">Actividades físicas y deportivas</option>
-    <option value="cadiz">Administración y gestión</option>
-    <option value="cordoba">Agraria</option>
-    <option value="granada">Artes gráficas</option>
-    <option value="huelva">Comercio y marketing</option>
-    <option value="jaen">Edificación y obra civil</option>
-    <option value="malaga">Electricidad y electrónica</option>
-    <option value="sevilla">Energías y Agua</option>
-    <option value="Almeria">Fabricación mecánica</option>
-    <option value="cadiz">Hostelería y turismo</option>
-    <option value="cordoba">Imagen personal</option>
-    <option value="granada">Imagen y sonido</option>
-    <option value="huelva">Industrias alimentarias</option>
-    <option value="jaen">Industrias extractivas</option>
-    <option value="malaga">Informática y Comunicaciones</option>
-    <option value="sevilla">Instalación y Mantenimiento</option>
-    <option value="huelva">Madera, mueble y corcho</option>
-    <option value="jaen">Marítimo-pesquera</option>
-    <option value="malaga">Química</option>
-    <option value="sevilla">Sanidad</option>
-    <option value="Almeria">Seguridad y medio ambiente</option>
-    <option value="cadiz">Servicios socioculturales y a la comunidad</option>
-    <option value="cordoba">Textil, Confección y Piel</option>
-    <option value="granada">Transporte y Mantenimiento de Vehículos</option>
-  </select>
-</div>
+<div class="form">
+  <div class="form-group col-4">
+    <label for="familia">Familia:</label>
+    <select class="form-control" id="familia" [(ngModel)]="formulario.familia" name="familia" #familia="ngModel">
+      <option value="" ></option>
+      <option *ngFor="let fam of familia_curso" value="{{ fam  }}" >{{ fam  }}</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="nombre">Nombre de ciclo:</label>
-  <select class="form-control" id="nombre" [(ngModel)]="formulario.nombre" name="nombre" #nombre="ngModel">
-    <option value="fp1">Ciclos Formativos de Grado Medio</option>
-    <option value="fp2">Ciclos Formativos de Grado Superior</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="nombre">Nombre de ciclo:</label>
+    <select class="form-control" id="nombre" [(ngModel)]="formulario.nombre" name="nombre" #nombre="ngModel">
+      <option value="" ></option>
+      <option *ngFor="let nom of nombre_curso" value="{{ nom }}" >{{ nom }}</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="provincia">Provincia:</label>
-  <select class="form-control" id="provincia" [(ngModel)]="formulario.provincia" name="provincia" #provincia="ngModel">
-    <option value="Almeria">Almería</option>
-    <option value="cadiz">Cádiz</option>
-    <option value="cordoba">Córdoba</option>
-    <option value="granada">Granada</option>
-    <option value="huelva">Huelva</option>
-    <option value="jaen">Jaén</option>
-    <option value="malaga">Málaga</option>
-    <option value="sevilla">Sevilla</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="provincia">Provincia:</label>
+    <select class="form-control" id="provincia" [(ngModel)]="formulario.provincia" name="provincia" #provincia="ngModel">
+      <option value="" ></option>
+      <option value="Almeria">Almería</option>
+      <option value="cadiz">Cádiz</option>
+      <option value="cordoba">Córdoba</option>
+      <option value="granada">Granada</option>
+      <option value="huelva">Huelva</option>
+      <option value="jaen">Jaén</option>
+      <option value="malaga">Málaga</option>
+      <option value="sevilla">Sevilla</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="tipo">Tipo:</label>
-  <select class="form-control" id="tipo" [(ngModel)]="formulario.tipo" name="tipo" #tipo="ngModel">
-    <option value="publico">Público</option>
-    <option value="privado">Privado</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="tipo">Tipo:</label>
+    <select class="form-control" id="tipo" [(ngModel)]="formulario.tipo" name="tipo" #tipo="ngModel">
+      <option value="" ></option>
+      <option value="publico">Público</option>
+      <option value="privado">Privado</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="turno">Turno:</label>
-  <select class="form-control" id="turno" [(ngModel)]="formulario.turno" name="turno" #turno="ngModel">
-    <option value="manana">Mañana</option>
-    <option value="tarde">Tarde</option>
-    <option value="ambos">Ambos</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="turno">Turno:</label>
+    <select class="form-control" id="turno" [(ngModel)]="formulario.turno" name="turno" #turno="ngModel">
+      <option value="" ></option>
+      <option value="manana">Mañana</option>
+      <option value="tarde">Tarde</option>
+      <option value="ambos">Ambos</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="bilingue">Bilingüe:</label>
-  <select class="form-control" id="bilingue" [(ngModel)]="formulario.bilingue" name="bilingue" #bilingue="ngModel">
-    <option value="no">No bilingüe</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="bilingue">Bilingüe:</label>
+    <select class="form-control" id="bilingue" [(ngModel)]="formulario.bilingue" name="bilingue" #bilingue="ngModel">
+      <option value="" ></option>
+      <option *ngFor="let bili of bilingue_curso" value="{{ bili }}" >{{ bili }}</option>
+    </select>
+  </div>
 
-<div class="form-group">
-  <label for="dual">Dual:</label>
-  <select class="form-control" id="dual" [(ngModel)]="formulario.dual" name="dual" #dual="ngModel">
-    <option value="no">No oferta dual</option>
-    <option value="solo">solo algunas plazas</option>
-    <option value="todas">todas las plazas son dual</option>
-  </select>
-</div>
+  <div class="form-group col-4">
+    <label for="dual">Dual:</label>
+    <select class="form-control" id="dual" [(ngModel)]="formulario.dual" name="dual" #dual="ngModel">
+      <option value="" ></option>
+      <option value="no">No oferta dual</option>
+      <option value="solo">Solo algunas plazas</option>
+      <option value="todas">Todas las plazas son dual</option>
+    </select>
+  </div>
 
+</div>
 <input class="btn-primary btn" id="modi" type="button" value="Buscar datos" (click)="buscar_datos()">
