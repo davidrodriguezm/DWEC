@@ -57,10 +57,6 @@ export class FilaTabla {
         nombre_provincia = "Sevilla";
         break;
       }
-      default: {
-        nombre_provincia = "No encontrado";
-        break;
-     }
     }
     return nombre_provincia;
   }

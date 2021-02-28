@@ -25,6 +25,7 @@ export class TablaComponent implements OnInit {
 
   crear_tabla(): void {
     let filtrado = this.filtros.formulario;
+    let nueva_fila: Array<FilaTabla> = new Array<FilaTabla>();
     console.log(filtrado);
     for (let cur of this.filtros.cursos) {
       let valido: boolean = true;
@@ -35,11 +36,56 @@ export class TablaComponent implements OnInit {
           break;
         }
       }
-      if ( filtrado.familia == cur.familia || filtrado.familia == "" ) {
+      if ( ( filtrado.familia == cur.familia || filtrado.familia == "" ) && ( filtrado.nombre == cur.nombre_ciclo || filtrado.nombre == "" )
+        && ( filtrado.tipo == cur.tipo || filtrado.tipo == "" ) && ( filtrado.turno == cur.turno || filtrado.turno == "" ) &&
+        ( filtrado.bilingue == cur.bilingue || filtrado.bilingue == "" ) && ( filtrado.dual == cur.dual || filtrado.dual == "" )
+        && ( filtrado.provincia == this.select_provincia( centro ) || filtrado.provincia == "" )
+        ) {
         let filaTabla = new FilaTabla(centro, cur.familia, cur.nombre_ciclo, cur.tipo , cur.turno, cur.bilingue, cur.dual);
-        this.filas.push(filaTabla);
+        nueva_fila.push(filaTabla);
       }
     }
+    this.filas = nueva_fila;
+  }
+
+  select_provincia( centro ): string {
+    let nombre_provincia = "";
+    let codigo_pro = centro.codigo_provincia;
+    switch(codigo_pro) {
+      case "04": {
+        nombre_provincia = "Almería";
+        break;
+      }
+      case "11": {
+        nombre_provincia = "Cádiz";
+        break;
+      }
+      case "14": {
+        nombre_provincia = "Córdoba";
+        break;
+      }
+      case "18": {
+        nombre_provincia = "Granada";
+        break;
+      }
+      case "21": {
+        nombre_provincia = "Huelva";
+        break;
+      }
+      case "23": {
+        nombre_provincia = "Jaén";
+        break;
+      }
+      case "29": {
+        nombre_provincia = "Málaga";
+        break;
+      }
+      case "41": {
+        nombre_provincia = "Sevilla";
+        break;
+      }
+    }
+    return nombre_provincia;
   }
 
 }
