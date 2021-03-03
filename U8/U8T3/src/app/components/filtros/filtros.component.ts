@@ -47,7 +47,6 @@ export class FiltrosComponent implements OnInit {
   }
 
   buscar_datos(): void {
-    console.log(this.formulario);
     this.tabla.crear_tabla();
   }
 

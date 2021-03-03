@@ -26,7 +26,6 @@ export class TablaComponent implements OnInit {
   crear_tabla(): void {
     let filtrado = this.filtros.formulario;
     let nueva_fila: Array<FilaTabla> = new Array<FilaTabla>();
-    console.log(filtrado);
     for (let cur of this.filtros.cursos) {
       let valido: boolean = true;
       let centro: Centro;
