@@ -1,4 +1,4 @@
-import { Centro } from "../intefaces/centro";
+import { Centro } from "src/app/intefaces/Centro";
 
 export class FilaTabla {
   centro: Centro;

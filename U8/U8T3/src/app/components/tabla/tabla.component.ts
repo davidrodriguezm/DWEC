@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FilaTabla } from 'src/app/clases/FilaTabla';
-import { Centro } from 'src/app/intefaces/centro';
+import { Centro } from 'src/app/intefaces/Centro';
 import { Curso } from 'src/app/intefaces/Curso';
 import { FiltrosComponent } from '../filtros/filtros.component';
 import { Formulario } from 'src/app/clases/Formulario';

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Formulario } from 'src/app/clases/Formulario';
-import { Centro } from 'src/app/intefaces/centro';
+import { Centro } from 'src/app/intefaces/Centro';
 import { Curso } from 'src/app/intefaces/Curso';
 import { Datos } from 'src/app/intefaces/Datos';
 import { PeticionService } from 'src/app/services/peticion.service';
